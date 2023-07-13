@@ -32,12 +32,14 @@ public class User {
     @Column(length = 5)
     private String code;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user")
     @JsonManagedReference
-    private List <Plant> plants;
+    @JoinColumn(name = "voltages_Id")
+    private List <VoltSensor> voltages;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user")
     @JsonManagedReference
-    private List <Fish> fish;
+    @JoinColumn(name = "amp_Id")
+    private List <ElectricCurrentSensor> amps;
 
 }

@@ -23,7 +23,7 @@ public class AuthServiceImpl implements IAuthService {
     private final AuthenticationManager authenticationManager;
 
     @Value("${codehive.app.jwtSecret}")
-    private String jwtSecret;
+    private String jwtSecret ;
 
     @Override
     public BaseResponse authenticate(AuthenticationRequest request) {

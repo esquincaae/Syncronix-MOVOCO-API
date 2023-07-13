@@ -5,20 +5,23 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "phsensor")
+@Table(name = "amp")
 @Getter
 @Setter
-public class PhSensor {
+public class ElectricCurrentSensor {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column()
+    private Float amp;
+    private Float media;
+    private Float mediana;
+    private Float moda;
     private Float variance;
-
-    @Column()
     private Float standardDeviation;
-
-    @Column()
     private Float meanDeviation;
+
+    @ManyToOne
+    @JoinColumn(name = "amp_Id")
+    private ElectricCurrentSensor amps;
 }
