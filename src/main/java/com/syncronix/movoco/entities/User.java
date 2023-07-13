@@ -32,14 +32,15 @@ public class User {
     @Column(length = 5)
     private String code;
 
-    @OneToMany(mappedBy = "user")
+
     @JsonManagedReference
-    @JoinColumn(name = "voltages_Id")
+    @OneToMany(mappedBy = "user")
+    //@JoinColumn(name = "voltages_Id")
     private List <VoltSensor> voltages;
 
-    @OneToMany(mappedBy = "user")
     @JsonManagedReference
-    @JoinColumn(name = "amp_Id")
-    private List <ElectricCurrentSensor> amps;
+    @OneToMany(mappedBy = "user")
+    //@JoinColumn(name = "amp_Id")
+    private List <ElectricCurrentSensor> amp;
 
 }

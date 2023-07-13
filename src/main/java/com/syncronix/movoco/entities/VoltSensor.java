@@ -22,5 +22,5 @@ public class VoltSensor {
 
     @ManyToOne
     @JoinColumn(name = "voltage_Id")
-    private VoltSensor voltSensor;
+    private User user;
 }

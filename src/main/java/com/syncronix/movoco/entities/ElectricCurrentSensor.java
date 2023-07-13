@@ -23,5 +23,5 @@ public class ElectricCurrentSensor {
 
     @ManyToOne
     @JoinColumn(name = "amp_Id")
-    private ElectricCurrentSensor amps;
+    private User user;
 }
