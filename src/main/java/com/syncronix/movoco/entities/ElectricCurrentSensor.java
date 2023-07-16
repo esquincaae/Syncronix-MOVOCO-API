@@ -22,6 +22,6 @@ public class ElectricCurrentSensor {
     private Float meanDeviation;
 
     @ManyToOne
-    @JoinColumn(name = "amp_Id")
+    @JoinColumn(name = "user_Id")
     private User user;
 }

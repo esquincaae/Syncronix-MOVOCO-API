@@ -21,6 +21,6 @@ public class VoltSensor {
     private Float meanDeviation;
 
     @ManyToOne
-    @JoinColumn(name = "voltage_Id")
+    @JoinColumn(name = "user_Id")
     private User user;
 }
