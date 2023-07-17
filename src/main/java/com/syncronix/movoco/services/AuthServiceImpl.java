@@ -22,7 +22,7 @@ public class AuthServiceImpl implements IAuthService {
 
     private final AuthenticationManager authenticationManager;
 
-    @Value("${codehive.app.jwtSecret}")
+    @Value("${syncronix.app.jwtSecret}")
     private String jwtSecret ;
 
     @Override
