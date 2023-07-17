@@ -23,7 +23,7 @@ import java.net.http.HttpResponse;
 
 public class JWTTokenVerifierFilter extends OncePerRequestFilter {
 
-    @Value("${codehive.app.jwtSecret}")
+    @Value("${syncronix.app.jwtSecret}")
     private String jwtSecret;
 
     @Autowired
