@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IVoltSensorRepository extends JpaRepository<VoltSensor, Long> {
 
-    @Query(value = "SELECT media FROM voltsensor ORDER BY media.id DESC ")
-    String findLastDataFromMedia();
+
 }

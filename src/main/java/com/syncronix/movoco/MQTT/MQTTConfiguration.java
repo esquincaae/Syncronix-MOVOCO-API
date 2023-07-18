@@ -20,7 +20,7 @@ public class MQTTConfiguration {
     @Value("${exchange.queue.voltSensor.name}")
     private String voltSensor;
 
-    @Value("${exchange.queue.voltTemperatureSensor.name}")
+    @Value("${exchange.queue.ampSensor.name}")
     private String ampSensor;
 
     @Bean

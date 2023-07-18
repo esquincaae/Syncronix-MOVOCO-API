@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IAmpSensorRepository extends JpaRepository<AmpSensor, Long> {
 
-    @Query(value = "SELECT media FROM ampsensor ORDER BY media.id DESC ")
-    String findLastDataFromMedia();
+
 }
