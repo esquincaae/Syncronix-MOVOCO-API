@@ -38,6 +38,6 @@ public class User {
     @JsonManagedReference
     @OneToMany(mappedBy = "user")
     //@JoinColumn(name = "amp_Id")
-    private List <ElectricCurrentSensor> amp;
+    private List <AmpSensor> amp;
 
 }

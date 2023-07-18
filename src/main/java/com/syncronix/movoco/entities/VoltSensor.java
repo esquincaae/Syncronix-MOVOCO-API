@@ -12,7 +12,7 @@ public class VoltSensor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Float volts;
+    private Float volt;
     private Float media;
     private Float mediana;
     private Float moda;

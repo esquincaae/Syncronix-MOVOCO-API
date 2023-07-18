@@ -8,8 +8,8 @@ import lombok.Setter;
 @Table(name = "amp")
 @Getter
 @Setter
-public class ElectricCurrentSensor {
-    
+public class AmpSensor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

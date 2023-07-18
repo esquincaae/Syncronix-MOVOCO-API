@@ -109,6 +109,16 @@
             <artifactId>lombok</artifactId>
             <version>1.18.28</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-amqp</artifactId>
+            <version>3.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit</artifactId>
+            <version>3.0.4</version>
+        </dependency>
     </dependencies>
 
     <build>

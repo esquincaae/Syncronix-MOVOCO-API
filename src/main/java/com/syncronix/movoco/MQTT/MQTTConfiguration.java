@@ -1,5 +1,4 @@
-package com.example.intellifishbackend.MQTT;
-
+package com.syncronix.movoco.MQTT;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -16,16 +15,13 @@ import org.springframework.context.annotation.Configuration;
 public class MQTTConfiguration {
 
     @Value("${exchange.name}")
-    private String intelliFishName;
+    private String movocoName;
 
-    @Value("${exchange.queue.phSensor.name}")
-    private String phSensor;
+    @Value("${exchange.queue.voltSensor.name}")
+    private String voltSensor;
 
-    @Value("${exchange.queue.waterTemperatureSensor.name}")
-    private String waterTemperatureSensor;
-
-    @Value("${exchange.queue.waterFlowSensor.name}")
-    private String waterFlowSensor;
+    @Value("${exchange.queue.voltTemperatureSensor.name}")
+    private String ampSensor;
 
     @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory){
@@ -44,47 +40,33 @@ public class MQTTConfiguration {
     }
 
     @Bean
-    public Queue phSensorqueue() {
+    public Queue ampSensorqueue() {
 
-        return new Queue(phSensor);
+        return new Queue(ampSensor);
     }
 
     @Bean
-    public Queue waterTemperaturequeue(){
+    public Queue voltSensorqueue(){
 
-        return new Queue(waterTemperatureSensor);
-    }
-
-    @Bean
-    public Queue waterFlowqueue(){
-
-        return new Queue(waterFlowSensor);
+        return new Queue(voltSensor);
     }
 
     @Bean
     public TopicExchange exchange() {
-        return new TopicExchange(intelliFishName);
+        return new TopicExchange(movocoName);
     }
 
     @Bean
-    public Binding bindingPhSensorQueue(){
+    public Binding bindingAmpSensorQueue(){
 
-        return BindingBuilder.bind(phSensorqueue()).to(exchange()).with("phSensorData");
+        return BindingBuilder.bind(ampSensorqueue()).to(exchange()).with("ampSensorData");
 
     }
 
     @Bean
-    public Binding bindingWaterTemperatureQueue(){
+    public Binding bindingVoltSensorQueue(){
 
-        return BindingBuilder.bind(waterTemperaturequeue()).to(exchange()).with("waterTemperatureSensorData");
+        return BindingBuilder.bind(voltSensorqueue()).to(exchange()).with("voltSensorData");
     }
-
-    @Bean
-    public Binding bindingWaterFlowQueue(){
-
-        return BindingBuilder.bind(waterFlowqueue()).to(exchange()).with("waterFlowSensorData");
-    }
-
-
 
 }

@@ -1,11 +1,9 @@
-package com.example.intellifishbackend.MQTT;
+package com.syncronix.movoco.MQTT;
 
-import com.example.intellifishbackend.MQTT.dtos.PhSensorDataBodyRequest;
-import com.example.intellifishbackend.MQTT.dtos.WaterFlowSensorDataBodyRequest;
-import com.example.intellifishbackend.MQTT.dtos.WaterTemperatureSensorDataBodyRequest;
-import com.example.intellifishbackend.services.interfaces.IPhSensorService;
-import com.example.intellifishbackend.services.interfaces.IWaterFlowSensorService;
-import com.example.intellifishbackend.services.interfaces.IWaterTemperatureService;
+import com.syncronix.movoco.MQTT.dtos.VoltSensorDataBodyRequest;
+import com.syncronix.movoco.MQTT.dtos.AmpSensorDataBodyRequest;
+import com.syncronix.movoco.services.interfaces.IAmpSensorService;
+import com.syncronix.movoco.services.interfaces.IVoltSensorService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,33 +12,19 @@ import org.springframework.stereotype.Component;
 public class Consumer {
 
     @Autowired
-    IPhSensorService phSensorService;
-
+    IAmpSensorService ampSensorService;
     @Autowired
-    IWaterTemperatureService waterTemperatureService;
+    IVoltSensorService voltSensorService;
 
-    @Autowired
-    IWaterFlowSensorService waterFlowSensorService;
+    @RabbitListener(queues = {"${exchange.queue.ampSensor.name}"})
+    public void ampSensor(AmpSensorDataBodyRequest request){
 
-
-    @RabbitListener(queues = {"${exchange.queue.phSensor.name}"})
-    public void phSensor(PhSensorDataBodyRequest request){
-
-        phSensorService.create(request);
-
-
+        ampSensorService.create(request);
     }
+    @RabbitListener(queues = {"${exchange.queue.voltSensor.name}"})
+    public void voltSensor(VoltSensorDataBodyRequest request){
 
-    @RabbitListener(queues = {"${exchange.queue.waterTemperatureSensor.name}"})
-    public void waterTemperatureSensor(WaterTemperatureSensorDataBodyRequest request){
-
-        waterTemperatureService.create(request);
-    }
-
-    @RabbitListener(queues = {"${exchange.queue.waterFlowSensor.name}"})
-    public void waterFlowSensor(WaterFlowSensorDataBodyRequest request){
-
-        waterFlowSensorService.create(request);
+        voltSensorService.create(request);
     }
 
 }
