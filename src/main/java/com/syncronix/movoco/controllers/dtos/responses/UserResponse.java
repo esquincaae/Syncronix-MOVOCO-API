@@ -15,5 +15,4 @@ public class UserResponse {
 
     private String password;
 
-    private String code;
 }

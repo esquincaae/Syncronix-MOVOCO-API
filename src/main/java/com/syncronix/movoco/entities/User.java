@@ -29,9 +29,6 @@ public class User {
     @Column()
     private String password;
 
-    @Column(length = 5)
-    private String code;
-
 
     @JsonManagedReference
     @OneToMany(mappedBy = "user")

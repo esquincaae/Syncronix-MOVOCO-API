@@ -18,7 +18,4 @@ public class UserRequest {
     @NotBlank
     @NotNull
     private String password;
-    @NotBlank
-    @NotNull
-    private String code;
 }
