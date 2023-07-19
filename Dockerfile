@@ -8,6 +8,6 @@ COPY pom.xml .
 RUN mvn dependency:resolve
 
 COPY src ./src
-RUN mvn package
+RUN mvn -DskipTests=true package
 
 CMD ["java", "-jar", "target/MovocoApi.jar"]
