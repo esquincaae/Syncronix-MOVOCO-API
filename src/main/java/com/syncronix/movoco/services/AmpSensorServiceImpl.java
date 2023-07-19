@@ -47,8 +47,6 @@ public class AmpSensorServiceImpl implements IAmpSensorService {
         AmpSensor ampSensor = new AmpSensor();
         ampSensor.setAmp(request.getAmp());
         ampSensor.setMedia(request.getMedia());
-        ampSensor.setMediana(request.getMediana());
-        ampSensor.setModa(request.getModa());
         ampSensor.setVariance(request.getVariance());
         ampSensor.setStandardDeviation(request.getStandardDeviation());
         ampSensor.setMeanDeviation(request.getMeanDeviation());

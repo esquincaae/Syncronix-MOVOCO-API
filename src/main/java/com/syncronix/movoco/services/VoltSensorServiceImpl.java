@@ -43,8 +43,6 @@ public class VoltSensorServiceImpl implements IVoltSensorService {
         VoltSensor voltSensor = new VoltSensor();
         voltSensor.setVolt(request.getVolt());
         voltSensor.setMedia(request.getMedia());
-        voltSensor.setMediana(request.getMediana());
-        voltSensor.setModa(request.getModa());
         voltSensor.setVariance(request.getVariance());
         voltSensor.setStandardDeviation(request.getStandardDeviation());
         voltSensor.setMeanDeviation(request.getMeanDeviation());
