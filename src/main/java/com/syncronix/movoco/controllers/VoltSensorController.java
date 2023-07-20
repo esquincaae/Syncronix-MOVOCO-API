@@ -27,7 +27,7 @@ public class VoltSensorController {
         return ResponseEntity.ok(lasData);
     }
 
-    @GetMapping("amp")
+    @GetMapping("volt")
     public ResponseEntity<String> findLastDataFromVolt(){
 
         String lasData = service.findLastDataFromVolt();
