@@ -44,7 +44,7 @@ public class SecurityConfig {
                                 .requestMatchers("/swagger-ui/**").permitAll() //ABRIR TODAS LAS RUTAS PARA EL SWAGGER
                                 .requestMatchers("/v3/api-docs/**").permitAll()
                                 .requestMatchers("/api/auth/**").permitAll()
-                                .requestMatchers("api/user/**").permitAll()
+                                .requestMatchers(HttpMethod.POST, "api/user/**").permitAll()
                                 .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
                 .addFilterBefore(jwtTokenVerifierFilter(), UsernamePasswordAuthenticationFilter.class)
