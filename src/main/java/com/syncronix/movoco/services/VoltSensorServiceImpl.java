@@ -23,6 +23,31 @@ public class VoltSensorServiceImpl implements IVoltSensorService {
     }
 
     @Override
+    public String findLastDataFromVolt() {
+        return repository.findLastDataFromVolt();
+    }
+
+    @Override
+    public String findLastDataFromMeanDeviation() {
+        return repository.findLastDataFromMeanDeviation();
+    }
+
+    @Override
+    public String findLastDataFromMedia() {
+        return repository.findLastDataFromMedia();
+    }
+
+    @Override
+    public String findLastDataFromStandardDeviation() {
+        return repository.findLastDataFromStandardDeviation();
+    }
+
+    @Override
+    public String findLastDataFromVariance() {
+        return repository.findLastDataFromVariance();
+    }
+
+    @Override
     public BaseResponse list() {
         List<VoltSensor> data = repository.findAll();
 

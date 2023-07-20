@@ -12,5 +12,15 @@ public interface IAmpSensorService {
 
     BaseResponse list();
 
+    String findLastDataFromMedia();
+
+    String findLastDataFromMeanDeviation();
+
+    String findLastDataFromAmp();
+
+    String findLastDataFromStandardDeviation();
+
+    String findLastDataFromVariance();
+
 
 }

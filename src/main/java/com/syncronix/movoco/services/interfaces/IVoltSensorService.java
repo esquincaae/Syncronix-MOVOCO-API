@@ -6,6 +6,15 @@ import com.syncronix.movoco.controllers.dtos.responses.BaseResponse;
 public interface IVoltSensorService {
     void create(VoltSensorDataBodyRequest request);
 
+    String findLastDataFromVolt();
+
+    String findLastDataFromMeanDeviation();
+
+    String findLastDataFromMedia();
+
+    String findLastDataFromStandardDeviation();
+
+    String findLastDataFromVariance();
     BaseResponse list();
 
 

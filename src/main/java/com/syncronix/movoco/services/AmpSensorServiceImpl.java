@@ -40,7 +40,30 @@ public class AmpSensorServiceImpl implements IAmpSensorService {
                 .build();
     }
 
+    @Override
+    public String findLastDataFromMedia() {
+        return repository.findLastDataFromMedia();
+    }
 
+    @Override
+    public String findLastDataFromMeanDeviation() {
+        return repository.findLastDataFromMeanDeviation();
+    }
+
+    @Override
+    public String findLastDataFromAmp() {
+        return repository.findLastDataFromAmp();
+    }
+
+    @Override
+    public String findLastDataFromStandardDeviation() {
+        return repository.findLastDataFromStandardDeviation();
+    }
+
+    @Override
+    public String findLastDataFromVariance() {
+        return repository.findLastDataFromVariance();
+    }
 
 
     private AmpSensor from(AmpSensorDataBodyRequest request){
