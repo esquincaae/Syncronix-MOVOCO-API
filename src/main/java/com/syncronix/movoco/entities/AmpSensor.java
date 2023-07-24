@@ -20,8 +20,10 @@ public class AmpSensor {
     private Float variance;
     private Float standardDeviation;
     private Float meanDeviation;
-
+/*
     @ManyToOne
     @JoinColumn(name = "user_Id")
     private User user;
+*/
 }
+

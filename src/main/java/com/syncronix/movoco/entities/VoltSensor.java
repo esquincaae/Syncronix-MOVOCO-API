@@ -20,7 +20,10 @@ public class VoltSensor {
     private Float standardDeviation;
     private Float meanDeviation;
 
+    /*
     @ManyToOne
     @JoinColumn(name = "user_Id")
     private User user;
+*/
 }
+
