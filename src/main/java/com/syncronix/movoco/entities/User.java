@@ -29,15 +29,4 @@ public class User {
     @Column()
     private String password;
 
-/*
-    @JsonManagedReference
-    @OneToMany(mappedBy = "user")
-    //@JoinColumn(name = "voltages_Id")
-    private List <VoltSensor> voltages;
-
-   @JsonManagedReference
-    @OneToMany(mappedBy = "user")
-    //@JoinColumn(name = "amp_Id")
-    private List <AmpSensor> amp;
-*/
 }

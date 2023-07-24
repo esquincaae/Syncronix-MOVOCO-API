@@ -15,15 +15,9 @@ public class AmpSensor {
     private Long id;
     private Float amp;
     private Float media;
-    private Float mediana;
-    private Float moda;
     private Float variance;
     private Float standardDeviation;
     private Float meanDeviation;
-/*
-    @ManyToOne
-    @JoinColumn(name = "user_Id")
-    private User user;
-*/
+
 }
 
